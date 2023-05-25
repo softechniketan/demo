@@ -14,21 +14,36 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('add_customers') ?>" method="POST"
+                                    <form action="<?php echo base_url('add_employee') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Name <span class="text-danger">*</span></label>
+                                            <label for="on click url">employee No <span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="text" name="name" placeholder="Enter Part family "
-                                                class="form-control" value="" id="name">
+                                            <input required type="text" name="employee_no" placeholder="Enter employee No "
+                                                class="form-control" value="" id="employee_no">
                                             <input required type="hidden" name="table_name" value="design_index_master"
                                                 placeholder="Enter Part family " class="form-control" value="" id="">
 
 
                                         </div>
+                                        
 
+                                        <div class="form-group">
+                                            <label for="on click url">employee Name <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="employee_name" placeholder="Enter employee Name"
+                                                class="form-control" value="" id="employee_name">
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="on click url">employee department <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="employee_department" placeholder="Enter employee department "
+                                                class="form-control" value="" id="employee_department">
+                                            
+                                        </div>
 
                                 </div>
 
@@ -46,11 +61,11 @@
   <div class="card">
       <div class="card-header">
         <div class="d-inline-block  float-right">
-          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Customers</h3>
+          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Employee List</h3>
         </div>
         <div class="card-header">
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addPromo"> <i class="fa fa-plus"></i>
-                                Add Customers
+                                Add Employee
                             </button>
                         </div>
 
@@ -69,12 +84,15 @@
           <thead>
             <tr>
               <th>sr.no</th>
-              <th>Customers Name</th>
+              <th>Employee No</th>
+              <th>Employee Name</th>
+              <th>Employee Department</th>
+
              
               <th width="200" class="text-left">Action</th>
             </tr>
             <?php foreach ($records as $rec) {  
-        $name = $rec['name'];
+        $name = $rec['employee_no'];
         $id = $rec['id'];
           ?>
 
@@ -96,19 +114,34 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('edit_customers') ?>" method="POST"
+                                    <form action="<?php echo base_url('edit_employee') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Name <span class="text-danger">*</span></label>
+                                            <label for="on click url">employee No <span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="text" name="name" placeholder="Enter Part family "
-                                                class="form-control"  value="<?php  echo $name; ?>" id="name">
+                                            <input required type="text" name="employee_no" placeholder="Enter Part family "
+                                                class="form-control"  value="<?php  echo $name; ?>" id="employee_no">
                                             <input required type="hidden" name="id" 
                                                 placeholder="Enter Part family " class="form-control" value="<?php  echo $id; ?>" id="id">
 
 
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="on click url">employee Name <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="employee_name" placeholder="Enter employee Name"
+                                                class="form-control" value="<?php  echo $rec['employee_name']; ?>" id="employee_name">
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="on click url">employee department <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="employee_department" placeholder="Enter employee department "
+                                                class="form-control" value="<?php  echo $rec['employee_department']; ?>" id="employee_department">
+                                            
                                         </div>
                                       
                                 </div>
@@ -124,8 +157,9 @@
           
             <tr>
              <th > <?php echo "{$rec['id']}"; ?>  </th>
-              <th><?php echo "{$rec['name']}"; ?></th>
-              
+              <th><?php echo "{$rec['employee_no']}"; ?></th>
+              <th><?php echo "{$rec['employee_name']}"; ?></th>
+              <th><?php echo "{$rec['employee_department']}"; ?></th>
 
               <!-- <th width="200" class="text-right"><?php echo "{$rec['Name']}"; ?> </th> -->
               <th  width="200" class="text-left">
@@ -134,7 +168,7 @@
 
 
            
-            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_customers/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
+            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_employee/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
             </tr>
 
             <?php  }

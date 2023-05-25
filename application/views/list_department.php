@@ -14,12 +14,12 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('add_operation_number') ?>" method="POST"
+                                    <form action="<?php echo base_url('add_department') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Name <span class="text-danger">*</span></label>
+                                            <label for="on click url">Department Name <span class="text-danger">*</span></label>
                                             <br>
                                             <input required type="text" name="name" placeholder="Enter Part family "
                                                 class="form-control" value="" id="name">
@@ -46,11 +46,11 @@
   <div class="card">
       <div class="card-header">
         <div class="d-inline-block  float-right">
-          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Operation Number</h3>
+          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Add Department </h3>
         </div>
         <div class="card-header">
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addPromo"> <i class="fa fa-plus"></i>
-                                Add Operation Number
+                                Add Department 
                             </button>
                         </div>
 
@@ -69,7 +69,7 @@
           <thead>
             <tr>
               <th>sr.no</th>
-              <th>Operation Number</th>
+              <th>Department Name</th>
              
               <th width="200" class="text-left">Action</th>
             </tr>
@@ -96,7 +96,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('edit_operation_number') ?>" method="POST"
+                                    <form action="<?php echo base_url('edit_department') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
@@ -134,7 +134,7 @@
 
 
            
-            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_operation_number/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
+            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_department/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
             </tr>
 
             <?php  }

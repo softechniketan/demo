@@ -14,19 +14,33 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('add_ppap_index_master') ?>" method="POST"
+                                    <form action="<?php echo base_url('add_project_entry') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Name <span class="text-danger">*</span></label>
+                                            <label for="on click url">Po No<span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="text" name="name" placeholder="Enter Part family "
-                                                class="form-control" value="" id="name">
+                                            <input required type="text" name="project_no" placeholder="Enter Part family "
+                                                class="form-control" value="" id="project_no">
                                             <input required type="hidden" name="table_name" value="design_index_master"
                                                 placeholder="Enter Part family " class="form-control" value="" id="">
 
 
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="on click url">Project Name<span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="project_name" placeholder="Enter Part family "
+                                                class="form-control" value="" id="project_name">
+                                          
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="on click url">Assign Project Task <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="project_task" placeholder="Enter Part family "
+                                                class="form-control" value="" id="project_task">
+                                          
                                         </div>
 
 
@@ -46,11 +60,11 @@
   <div class="card">
       <div class="card-header">
         <div class="d-inline-block  float-right">
-          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;PPAP Index Master List</h3>
+          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Po/project Entry List</h3>
         </div>
         <div class="card-header">
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addPromo"> <i class="fa fa-plus"></i>
-                                Add PPAP Index Master List
+                                Add Po/project entry
                             </button>
                         </div>
 
@@ -69,12 +83,14 @@
           <thead>
             <tr>
               <th>sr.no</th>
-              <th>PPAP Index Master Name</th>
+              <th>Project No</th>
+              <th>Project Name</th>
+              <th>Project Task</th>
              
               <th width="200" class="text-left">Action</th>
             </tr>
             <?php foreach ($records as $rec) {  
-        $name = $rec['name'];
+        $name = $rec['project_no'];
         $id = $rec['id'];
           ?>
 
@@ -96,19 +112,33 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('edit_ppap_index_master') ?>" method="POST"
+                                    <form action="<?php echo base_url('edit_project_entry') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Name <span class="text-danger">*</span></label>
+                                            <label for="on click url">Po No<span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="text" name="name" placeholder="Enter Part family "
-                                                class="form-control"  value="<?php  echo $name; ?>" id="name">
+                                            <input required type="text" name="project_no" placeholder="Enter Part family "
+                                                class="form-control"  value="<?php  echo $name; ?>" id="project_no">
                                             <input required type="hidden" name="id" 
                                                 placeholder="Enter Part family " class="form-control" value="<?php  echo $id; ?>" id="id">
 
 
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="on click url">Project Name<span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="project_name" placeholder="Enter Part family "
+                                                class="form-control" value="<?php  echo $rec['project_name']; ?>" id="project_name">
+                                          
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="on click url">Assign Project Task <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="project_task" placeholder="Enter Part family "
+                                                class="form-control" value="<?php echo $rec['project_task'];  ?>" id="project_task">
+                                          
                                         </div>
                                       
                                 </div>
@@ -124,7 +154,10 @@
           
             <tr>
              <th > <?php echo "{$rec['id']}"; ?>  </th>
-              <th><?php echo "{$rec['name']}"; ?></th>
+              <th><?php echo "{$rec['project_no']}"; ?></th>
+              <th><?php echo "{$rec['project_name']}"; ?></th>
+              <th><?php echo "{$rec['project_task']}"; ?></th>
+
               
 
               <!-- <th width="200" class="text-right"><?php echo "{$rec['Name']}"; ?> </th> -->
@@ -134,7 +167,7 @@
 
 
            
-            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_ppap_index_master/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
+            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_project_entry/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
             </tr>
 
             <?php  }

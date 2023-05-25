@@ -72,20 +72,24 @@ class Welcome extends CI_Controller {
 
 
 
-	public function add_design_index(){
+	public function add_customer(){
 		$data = array(
 			'name' => $this->input->post('name'),
+			'location' => $this->input->post('location'),
+
 			);
-			$this->Crud_model->add_design_index($data);
-			redirect(base_url('list_design_index') , 'refresh');
+			//print_r($data);die();
+			$this->Crud_model->add_customer($data);
+			redirect(base_url('list_customer') , 'refresh');
 			
 	}
 
-	public function list_design_index()
+	public function list_customer()
 	{
-		$data['records'] = $this->Crud_model->get_list_master();
+		//echo "ekdkd";die();
+		$data['records'] = $this->Crud_model->get_list_customer();
 		$this->load->view('sidebar');
-		$this->load->view('list_masters',$data);
+		$this->load->view('list_customer',$data);
 	$this->load->view('footer');
 
 	}
@@ -110,15 +114,16 @@ class Welcome extends CI_Controller {
 
 	}
 
- public function edit_design_index(){
+ public function edit_customer(){
 	$data = array(
 		'id' => $this->input->post('id'),
 		'name' => $this->input->post('name'),
-		
+		'location' => $this->input->post('location'),
+
 		);
-	//	print_r($data); die();
-		$this->Crud_model->update_design_index($data);
-		redirect(base_url('list_design_index') , 'refresh');		
+	//print_r($data); die();
+		$this->Crud_model->update_customer($data);
+		redirect(base_url('list_customer') , 'refresh');		
   }
 
 
@@ -147,221 +152,299 @@ class Welcome extends CI_Controller {
 	}
 
 
-	public function delete_design_index(){
-		$this->Crud_model->delete_design_index();
-		redirect(base_url('list_design_index') , 'refresh');	
+	public function delete_customer(){
+		$this->Crud_model->delete_customer();
+		redirect(base_url('list_customer') , 'refresh');	
 	   }
 
-	   public function list_ppap_index_master()
+	   public function list_department()
 	   {
-		   $data['records'] = $this->Crud_model->get_list_ppap_index_master();
+		   $data['records'] = $this->Crud_model->get_list_department();
 		   $this->load->view('sidebar');
-		   $this->load->view('list_ppap_index_master',$data);
+		   $this->load->view('list_department',$data);
 	   $this->load->view('footer');
    
 	   }
 
-	   public function add_ppap_index_master(){
+	   public function add_department(){
 		$data = array(
 			'name' => $this->input->post('name'),
 			);
-			$this->Crud_model->add_ppap_index_master($data);
-			redirect(base_url('list_ppap_index_master') , 'refresh');
+			$this->Crud_model->add_department($data);
+			redirect(base_url('list_department') , 'refresh');
 			
 	}
 
-	public function edit_ppap_index_master(){
+	public function edit_department(){
 		$data = array(
 			'id' => $this->input->post('id'),
 			'name' => $this->input->post('name'),
 			
 			);
 		
-			$this->Crud_model->update_ppap_index_master($data);
-			redirect(base_url('list_ppap_index_master') , 'refresh');		
+			$this->Crud_model->update_department($data);
+			redirect(base_url('list_department') , 'refresh');		
 	}
 	
-	public function delete_ppap_index_master(){
-		$this->Crud_model->delete_ppap_index_master();
-		redirect(base_url('list_ppap_index_master') , 'refresh');	
+	public function delete_department(){
+		$this->Crud_model->delete_department();
+		redirect(base_url('list_department') , 'refresh');	
 	   }
 	   
-	   public function list_part_family()
+	   public function list_employee()
 	   {
-	 $data['records'] = $this->Crud_model->get_list_part_family();
+	 $data['records'] = $this->Crud_model->get_list_employee();
 		   $this->load->view('sidebar');
-		  $this->load->view('list_part_family',$data);
+		  $this->load->view('list_employee',$data);
 		 
 	   $this->load->view('footer');
    
 	   }
 	   
-	   public function add_part_family(){
+	   public function add_employee(){
 		$data = array(
-			'name' => $this->input->post('name'),
-			);
-			$this->Crud_model->add_part_family($data);
-			redirect(base_url('list_part_family') , 'refresh');
+			'employee_no' => $this->input->post('employee_no'),
+			'employee_name' => $this->input->post('employee_name'),
+			'employee_department' => $this->input->post('employee_department'),
+        	);
+			//print_r($data);die();
+			$this->Crud_model->add_employee($data);
+			redirect(base_url('list_employee') , 'refresh');
 			
 	}
-	public function edit_part_family(){
+	public function edit_employee(){
 		$data = array(
+			'employee_no' => $this->input->post('employee_no'),
+			'employee_name' => $this->input->post('employee_name'),
+			'employee_department' => $this->input->post('employee_department'),
 			'id' => $this->input->post('id'),
-			'name' => $this->input->post('name'),
-			
+
 			);
+			//print_r($data);die();
 		
-			$this->Crud_model->update_part_family($data);
-			redirect(base_url('list_part_family') , 'refresh');		
+			$this->Crud_model->update_employee($data);
+			redirect(base_url('list_employee') , 'refresh');		
 	}
-	public function delete_part_family(){
-		$this->Crud_model->delete_part_family();
-		redirect(base_url('list_part_family') , 'refresh');	
+	public function delete_employee(){
+		$this->Crud_model->delete_employee();
+		redirect(base_url('list_employee') , 'refresh');	
 	   }
 
 	   
-	   public function list_customers()
+	   public function list_admin_task()
 	   {
-	 $data['records'] = $this->Crud_model->get_list_customers();
+	 $data['records'] = $this->Crud_model->get_list_admin_task();
 		   $this->load->view('sidebar');
-		  $this->load->view('list_customers',$data);
+		  $this->load->view('list_admin_task',$data);
 		 
 	   $this->load->view('footer');
    
 	   }
 
-	   public function add_customers(){
+	   public function add_admin_task(){
 		$data = array(
-			'name' => $this->input->post('name'),
+			'task_description' => $this->input->post('task_description'),
+			'evaluation_method' => $this->input->post('evaluation_method'),
 			);
-			$this->Crud_model->add_customers($data);
-			redirect(base_url('list_customers') , 'refresh');
+			//print_r($data);die();
+			$this->Crud_model->add_admin_task($data);
+			redirect(base_url('list_admin_task') , 'refresh');
 			
 	  }
-	public function edit_customers(){
+	public function edit_admin_task(){
 		$data = array(
 			'id' => $this->input->post('id'),
-			'name' => $this->input->post('name'),
-			
+			'task_description' => $this->input->post('task_description'),
+			'evaluation_method' => $this->input->post('evaluation_method'),
 			);
 		
-			$this->Crud_model->update_customers($data);
-			redirect(base_url('list_customers') , 'refresh');		
+			$this->Crud_model->update_admin_task($data);
+			redirect(base_url('list_admin_task') , 'refresh');		
 	}
 
-	public function delete_customers(){
-		$this->Crud_model->delete_customers();
-		redirect(base_url('list_customers') , 'refresh');	
+	public function delete_admin_task(){
+		$this->Crud_model->delete_admin_task();
+		redirect(base_url('list_admin_task') , 'refresh');	
 	   }
 	  
-	   public function list_operation_number()
+	   public function list_operational_task()
 	   {
-	 $data['records'] = $this->Crud_model->get_list_operation_number();
+	 $data['records'] = $this->Crud_model->get_list_operational_task();
 		   $this->load->view('sidebar');
-		  $this->load->view('list_operation_number',$data);
+		  $this->load->view('list_operational_task',$data);
 		 
 	   $this->load->view('footer');
    
 	   }
 
-	   public function add_operation_number(){
+	   public function add_operational_task(){
 		$data = array(
-			'name' => $this->input->post('name'),
-			);
-			$this->Crud_model->add_operation_number($data);
-			redirect(base_url('list_operation_number') , 'refresh');
-			
-	}
-	public function edit_operation_number(){
-		$data = array(
-			'id' => $this->input->post('id'),
-			'name' => $this->input->post('name'),
-			
-			);
-		
-			$this->Crud_model->update_operation_number($data);
-			redirect(base_url('list_operation_number') , 'refresh');		
-	}
+			'operational_task_description' => $this->input->post('operational_task_description'),
+			'department' => $this->input->post('department'),
 
-	public function delete_operation_number(){
-		$this->Crud_model->delete_operation_number();
-	
-		redirect(base_url('list_operation_number') , 'refresh');		
-
-	   }
-
-	   public function list_part_type()
-	   {
-	 $data['records'] = $this->Crud_model->get_list_part_type();
-		   $this->load->view('sidebar');
-		  $this->load->view('list_part_type',$data);
-		 
-	   $this->load->view('footer');
-   
-	   }
-
-	   public function add_part_type(){
-		$data = array(
-			'name' => $this->input->post('name'),
-			);
-			$this->Crud_model->add_part_type($data);
-			redirect(base_url('list_part_type') , 'refresh');
-			
-	}
-	public function edit_part_type(){
-		$data = array(
-			'id' => $this->input->post('id'),
-			'name' => $this->input->post('name'),
-			
-			);
-		
-			$this->Crud_model->update_part_type($data);
-			redirect(base_url('list_part_type') , 'refresh');		
-	}
-
-	public function delete_part_type(){
-		$this->Crud_model->delete_part_type();
-	
-		redirect(base_url('list_part_type') , 'refresh');		
-
-	   }
-
-	   public function list_email_masters()
-	   {
-	 $data['records'] = $this->Crud_model->get_list_email_masters();
-		   $this->load->view('sidebar');
-		  $this->load->view('list_email_masters',$data);
-		 
-	   $this->load->view('footer');
-   
-	   }
-
-	   public function add_email_masters(){
-		$data = array(
-			'email_id' => $this->input->post('name'),
 			);
 			//print_r($data); die();
-			$this->Crud_model->add_email_masters($data);
-			redirect(base_url('list_email_masters') , 'refresh');
+			$this->Crud_model->add_operational_task($data);
+			redirect(base_url('list_operational_task') , 'refresh');
 			
 	}
-	public function edit_email_masters(){
+	public function edit_operational_task(){
 		$data = array(
 			'id' => $this->input->post('id'),
-			'email_id' => $this->input->post('name'),
+			'operational_task_description' => $this->input->post('operational_task_description'),
+			'department' => $this->input->post('department'),
+         	);
+		
+			$this->Crud_model->update_operational_task($data);
+			redirect(base_url('list_operational_task') , 'refresh');		
+	}
+
+	public function delete_operational_task(){
+		$this->Crud_model->list_operational_task();
+	
+		redirect(base_url('list_operational_task') , 'refresh');		
+
+	   }
+
+	   public function list_project_entry()
+	   {
+	 $data['records'] = $this->Crud_model->get_list_project_entry();
+		   $this->load->view('sidebar');
+		  $this->load->view('list_project_entry',$data);
+		 
+	   $this->load->view('footer');
+   
+	   }
+
+	   public function add_project_entry(){
+		$data = array(
+			'project_no' => $this->input->post('project_no'),
+			'project_name' => $this->input->post('project_name'),
+			'project_task' => $this->input->post('project_task'),
+			);
+			//print_r($data);die();
+			$this->Crud_model->add_project_entry($data);
+			redirect(base_url('list_project_entry') , 'refresh');
+			
+	}
+	public function edit_project_entry(){
+		$data = array(
+			'id' => $this->input->post('id'),
+			'project_no' => $this->input->post('project_no'),
+			'project_name' => $this->input->post('project_name'),
+			'project_task' => $this->input->post('project_task'),
 			
 			);
 		
-			$this->Crud_model->update_email_masters($data);
-			redirect(base_url('list_email_masters') , 'refresh');		
+			$this->Crud_model->update_project_entry($data);
+			redirect(base_url('list_project_entry') , 'refresh');		
 	}
 
-	public function delete_email_masters(){
-		$this->Crud_model->delete_email_masters();
+	public function delete_project_entry(){
+		$this->Crud_model->delete_project_entry();
 	
-		redirect(base_url('list_email_masters') , 'refresh');		
+		redirect(base_url('list_project_entry') , 'refresh');		
 
 	   }
+
+	   public function list_project_task()
+	   {
+		$data['task_description'] = $this->Crud_model->get_list_operational_task();
+		//print_r($data);die();
+	 $data['records'] = $this->Crud_model->get_list_project_task();
+		   $this->load->view('sidebar');
+		  $this->load->view('list_project_task',$data);
+		 
+	   $this->load->view('footer');
+   
+	   }
+
+	   public function add_project_task(){
+
+		$data = array(
+			'operational_task_description' => $this->input->post('task_description'),
+			'department' => $this->input->post('department'),
+			'planned_compltion_days' => $this->input->post('planned_compltion_days'),
+			);
+		
+			$this->Crud_model->add_project_task($data);
+			redirect(base_url('list_project_task') , 'refresh');
+			
+	}
+	public function edit_project_task(){
+		$data = array(
+			'id' => $this->input->post('id'),
+			'operational_task_description' => $this->input->post('task_description'),
+			'department' => $this->input->post('department'),
+			'planned_compltion_days' => $this->input->post('planned_compltion_days'),
+			
+			);
+		//print_r($data);die();
+			$this->Crud_model->update_project_task($data);
+			redirect(base_url('list_project_task') , 'refresh');		
+	}
+
+	public function delete_project_task(){
+		$this->Crud_model->delete_project_task();
+	
+		redirect(base_url('list_project_task') , 'refresh');		
+
+	   }
+
+	   public function list_project_status()
+	   {
+		$data['records'] = $this->Crud_model->get_list_project_entry();
+		//print_r($data);die();
+	 $data['records'] = $this->Crud_model->get_list_project_status();
+		   $this->load->view('sidebar');
+		  $this->load->view('list_project_status',$data);
+		 
+	   $this->load->view('footer');
+   
+	   }
+
+	   public function add_project_status(){
+
+		$data = array(
+			'project_no' => $this->input->post('project_no'),
+			'project_name' => $this->input->post('project_name'),
+			'design_dept' => $this->input->post('design_dept'),
+			'purchase_dept' => $this->input->post('purchase_dept'),
+			'store_dept' => $this->input->post('store_dept'),
+			'mfg_dept' => $this->input->post('mfg_dept'),
+			'assy_dept' => $this->input->post('assy_dept'),
+			);
+			//print_r($data);die();
+		
+			$this->Crud_model->add_project_status($data);
+			redirect(base_url('list_project_status') , 'refresh');
+			
+	}
+	public function edit_project_status(){
+		$data = array(
+			'id' => $this->input->post('id'),
+			'project_no' => $this->input->post('project_no'),
+			'project_name' => $this->input->post('project_name'),
+			'design_dept' => $this->input->post('design_dept'),
+			'purchase_dept' => $this->input->post('purchase_dept'),
+			'store_dept' => $this->input->post('store_dept'),
+			'mfg_dept' => $this->input->post('mfg_dept'),
+			'assy_dept' => $this->input->post('assy_dept'),
+			);
+		//print_r($data);die();
+			$this->Crud_model->update_project_status($data);
+			redirect(base_url('list_project_status') , 'refresh');		
+	}
+	 
+	public function delete_project_status(){
+		$this->Crud_model->delete_project_status();
+	
+		redirect(base_url('list_project_status') , 'refresh');		
+
+	   }
+
+
+
 
 	   public function list_erp_users()
 	   {
@@ -456,9 +539,9 @@ class Welcome extends CI_Controller {
 	   
 	   public function list_parts()
 	   {
-		$data['customer'] = $this->Crud_model->get_list_customers();
-		$data['part_type'] = $this->Crud_model->get_list_part_type();
-		$data['part_family'] = $this->Crud_model->get_list_part_family();
+		$data['customer'] = $this->Crud_model->get_list_admin_task();
+		$data['part_type'] = $this->Crud_model->get_list_project_entry();
+		$data['part_family'] = $this->Crud_model->get_list_employee();
 
 
 	$data['records'] = $this->Crud_model->get_list_parts();

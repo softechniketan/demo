@@ -233,50 +233,57 @@
            
            
            <li class="nav-item">
-                <a href="<?php echo base_url('list_design_index'); ?>" class="nav-link">
+                <a href="<?php echo base_url('list_customer'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Design Index Master</p>
+                  <p>Customer </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url('list_ppap_index_master'); ?>" class="nav-link">
+                <a href="<?php echo base_url('list_department'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PPAP Index Master</p>
+                  <p>Department master</p>
                 </a>
               </li>
          
               <li class="nav-item">
-                <a href="<?php echo base_url('list_part_family'); ?>" class="nav-link">
+                <a href="<?php echo base_url('list_employee'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Part Family</p>
+                  <p>Employee</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="<?php echo base_url('list_customers'); ?>" class="nav-link">
+                <a href="<?php echo base_url('list_admin_task'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Customers</p>
+                  <p>Admin Task</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url('list_operation_number'); ?>" class="nav-link">
+                <a href="<?php echo base_url('list_operational_task'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Operation Number</p>
+                  <p>Operational task</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="<?php echo base_url('list_part_type'); ?>" class="nav-link">
+                <a href="<?php echo base_url('list_project_entry'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Part Type</p>
+                  <p>Po/project entry</p>
                 </a>
               </li>
 
                 
               <li class="nav-item">
-                <a href="<?php echo base_url('list_email_masters'); ?>" class="nav-link">
+                <a href="<?php echo base_url('list_project_task'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Email Masters</p>
+                  <p>assign PO/Project task</p>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a href="<?php echo base_url('list_project_status'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PO /project status</p>
                 </a>
               </li>
              

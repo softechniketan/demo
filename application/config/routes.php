@@ -8,50 +8,54 @@ $route['table'] = 'Welcome/table';
 $route['sign_in'] = 'Welcome/sign_in';
 $route['dashbord'] = 'Welcome/dashbord';
 $route['addmasters'] = 'Welcome/add_masters';
-$route['add_design_index'] = 'Welcome/add_design_index';
+$route['add_customer'] = 'Welcome/add_customer';
 
-$route['list_design_index'] = 'Welcome/list_design_index';
+$route['list_customer'] = 'Welcome/list_customer';
 
-$route['listmasters'] = 'Welcome/list_masters';
+$route['list_customer'] = 'Welcome/list_customer';
 
-$route['edit_design_index'] = 'Welcome/edit_design_index';
+$route['edit_customer'] = 'Welcome/edit_customer';
 
 $route['editmasters'] = 'Welcome/edit_masters';
 
-$route['delete_design_index'] = 'Welcome/delete_design_index';
+$route['delete_customer'] = 'Welcome/delete_customer';
 
 $route['deletemasters'] = 'Welcome/delete_masters';
 
-$route['list_ppap_index_master'] = 'Welcome/list_ppap_index_master';
-$route['add_ppap_index_master'] = 'Welcome/add_ppap_index_master';
-$route['edit_ppap_index_master'] = 'Welcome/edit_ppap_index_master';
-$route['delete_ppap_index_master'] = 'Welcome/delete_ppap_index_master';
+$route['list_department'] = 'Welcome/list_department';
+$route['add_department'] = 'Welcome/add_department';
+$route['edit_department'] = 'Welcome/edit_department';
+$route['delete_department'] = 'Welcome/delete_department';
 
-$route['list_part_family'] = 'Welcome/list_part_family';
-$route['add_part_family'] = 'Welcome/add_part_family';
-$route['edit_part_family'] = 'Welcome/edit_part_family';
-$route['delete_part_family'] = 'Welcome/delete_part_family';
+$route['list_employee'] = 'Welcome/list_employee';
+$route['add_employee'] = 'Welcome/add_employee';
+$route['edit_employee'] = 'Welcome/edit_employee';
+$route['delete_employee'] = 'Welcome/delete_employee';
 
-$route['list_customers'] = 'Welcome/list_customers';
-$route['add_customers'] = 'Welcome/add_customers';
-$route['edit_customers'] = 'Welcome/edit_customers';
-$route['delete_customers'] = 'Welcome/delete_customers';
+$route['list_admin_task'] = 'Welcome/list_admin_task';
+$route['add_admin_task'] = 'Welcome/add_admin_task';
+$route['edit_admin_task'] = 'Welcome/edit_admin_task';
+$route['delete_admin_task'] = 'Welcome/delete_admin_task';
 
-$route['list_operation_number'] = 'Welcome/list_operation_number';
-$route['add_operation_number'] = 'Welcome/add_operation_number';
-$route['edit_operation_number'] = 'Welcome/edit_operation_number';
+$route['list_operational_task'] = 'Welcome/list_operational_task';
+$route['add_operational_task'] = 'Welcome/add_operational_task';
+$route['edit_operational_task'] = 'Welcome/edit_operational_task';
 $route['delete_operation_number'] = 'Welcome/delete_operation_number';
 
-$route['list_part_type'] = 'Welcome/list_part_type';
-$route['add_part_type'] = 'Welcome/add_part_type';
-$route['edit_part_type'] = 'Welcome/edit_part_type';
-$route['delete_part_type'] = 'Welcome/delete_part_type';
+$route['list_project_entry'] = 'Welcome/list_project_entry';
+$route['add_project_entry'] = 'Welcome/add_project_entry';
+$route['edit_project_entry'] = 'Welcome/edit_project_entry';
+$route['delete_project_entry'] = 'Welcome/delete_project_entry';
+ 
+$route['list_project_task'] = 'Welcome/list_project_task';
+$route['add_project_task'] = 'Welcome/add_project_task';
+$route['edit_project_task'] = 'Welcome/edit_project_task';
+$route['delete_project_task'] = 'Welcome/delete_project_task';
 
-$route['list_email_masters'] = 'Welcome/list_email_masters';
-$route['add_email_masters'] = 'Welcome/add_email_masters';
-$route['edit_email_masters'] = 'Welcome/edit_email_masters';
-$route['delete_email_masters'] = 'Welcome/delete_email_masters';
-
+$route['list_project_status'] = 'Welcome/list_project_status';
+$route['add_project_status'] = 'Welcome/add_project_status';
+$route['edit_project_status'] = 'Welcome/edit_project_status';
+$route['delete_project_status'] = 'Welcome/delete_project_status';
 
 $route['list_erp_users'] = 'Welcome/list_erp_users';
 $route['add_erp_users'] = 'Welcome/add_erp_users';

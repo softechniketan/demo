@@ -14,18 +14,26 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('add_part_family') ?>" method="POST"
+                                    <form action="<?php echo base_url('add_operational_task') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Name <span class="text-danger">*</span></label>
+                                            <label for="on click url">Operational Task Description <span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="text" name="name" placeholder="Enter Part family "
-                                                class="form-control" value="" id="name">
+                                            <input required type="text" name="operational_task_description" placeholder="Enter Part family "
+                                                class="form-control" value="" id="operational_task_description">
                                             <input required type="hidden" name="table_name" value="design_index_master"
                                                 placeholder="Enter Part family " class="form-control" value="" id="">
 
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="on click url">Department<span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="department" placeholder="Enter Part family "
+                                                class="form-control" value="" id="department">
+                                          
 
                                         </div>
 
@@ -46,11 +54,11 @@
   <div class="card">
       <div class="card-header">
         <div class="d-inline-block  float-right">
-          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Part Family</h3>
+          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Operational Task List</h3>
         </div>
         <div class="card-header">
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addPromo"> <i class="fa fa-plus"></i>
-                                Add Part Family List
+                                Add Operational Task
                             </button>
                         </div>
 
@@ -69,12 +77,14 @@
           <thead>
             <tr>
               <th>sr.no</th>
-              <th>Part Family Name</th>
+              <th>Operational Task Description</th>
+              <th>Department</th>
+
              
               <th width="200" class="text-left">Action</th>
             </tr>
             <?php foreach ($records as $rec) {  
-        $name = $rec['name'];
+        $name = $rec['operational_task_description'];
         $id = $rec['id'];
           ?>
 
@@ -96,20 +106,30 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('edit_part_family') ?>" method="POST"
+                                    <form action="<?php echo base_url('edit_operational_task') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Name <span class="text-danger">*</span></label>
+                                            <label for="on click url">Operational Task Description <span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="text" name="name" placeholder="Enter Part family "
-                                                class="form-control"  value="<?php  echo $name; ?>" id="name">
+                                            <input required type="text" name="operational_task_description" placeholder="Enter Part family "
+                                                class="form-control"  value="<?php  echo $name; ?>" id="operational_task_description">
                                             <input required type="hidden" name="id" 
                                                 placeholder="Enter Part family " class="form-control" value="<?php  echo $id; ?>" id="id">
 
 
                                         </div>
+                                        <div class="form-group">
+                                            <label for="on click url">Department<span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="department" placeholder="Enter Part family "
+                                                class="form-control" value="<?php  echo $rec['department']; ?>" id="department">
+                                          
+
+                                        </div>
+
+
                                       
                                 </div>
 
@@ -124,7 +144,9 @@
           
             <tr>
              <th > <?php echo "{$rec['id']}"; ?>  </th>
-              <th><?php echo "{$rec['name']}"; ?></th>
+              <th><?php echo "{$rec['operational_task_description']}"; ?></th>
+              <th><?php echo "{$rec['department']}"; ?></th>
+
               
 
               <!-- <th width="200" class="text-right"><?php echo "{$rec['Name']}"; ?> </th> -->
@@ -134,7 +156,7 @@
 
 
            
-            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_part_family/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
+            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_operational_task/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
             </tr>
 
             <?php  }

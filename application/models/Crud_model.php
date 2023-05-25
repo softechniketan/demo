@@ -43,7 +43,7 @@ echo "model"; die();
 			return $this->db->get('add_part_type')->result_array();
 
 		}
-		public function add_design_index($data){
+		public function add_customer($data){
 
 			$this->db->insert('add_design_index', $data);
 			
@@ -54,7 +54,7 @@ echo "model"; die();
 			
 		}
 
-		public function get_list_master(){
+		public function get_list_customer(){
 			
 			$this->db->select('*');
 			return $this->db->get('add_design_index')->result_array();
@@ -69,85 +69,84 @@ echo "model"; die();
 		}
 		
 		
-		public function update_design_index($data){
+		public function update_customer($data){
 		
 	
 			$this->db->where('id', $data['id']);
 			$this->db->update('add_design_index', $data);
 			}
 	
- 	public function delete_design_index(){
+ 	public function delete_customer(){
 		$id =$this->uri->segment('3');
 		$this->db->where('id', $id);
 		$this -> db -> delete('add_design_index');
 		
 }
 
-public function add_ppap_index_master($data){
+public function add_department($data){
 
 	$this->db->insert('add_ppap_index_master', $data);
 	
 }
-public function get_list_ppap_index_master(){
+public function get_list_department(){
 			
 	$this->db->select('*');
 	return $this->db->get('add_ppap_index_master')->result_array();
 }
 
-public function update_ppap_index_master($data){
+public function update_department($data){
 		
 	
 	$this->db->where('id', $data['id']);
 	$this->db->update('add_ppap_index_master', $data);
 	}
 	
-	public function delete_ppap_index_master(){
+	public function delete_department(){
 		$id =$this->uri->segment('3');
 		$this->db->where('id', $id);
 		$this -> db -> delete('add_ppap_index_master');
 		
 }
 
-public function add_part_family($data){
+public function add_employee($data){
 
 	$this->db->insert('add_part_family', $data);
 }
 
-public function get_list_part_family(){
+public function get_list_employee(){
 			
 	$this->db->select('*');
 	return $this->db->get('add_part_family')->result_array();
 }
 
-public function update_part_family($data){
+public function update_employee($data){
 		
-	
 	$this->db->where('id', $data['id']);
 	$this->db->update('add_part_family', $data);
 	}
-	public function delete_part_family(){
+	public function delete_employee(){
 		$id =$this->uri->segment('3');
 		$this->db->where('id', $id);
 		$this -> db -> delete('add_part_family');
 		
 }
 
-public function add_customers($data){
+public function add_admin_task($data){
 
 	$this->db->insert('add_customers', $data);
 }
-public function get_list_customers(){
+public function get_list_admin_task(){
 			
 	$this->db->select('*');
 	return $this->db->get('add_customers')->result_array();
 }
-public function update_customers($data){
+public function update_admin_task($data){
 		
 	
 	$this->db->where('id', $data['id']);
 	$this->db->update('add_customers', $data);
 	}
-	public function delete_customers(){
+	public function delete_admin_task(){
 		$id =$this->uri->segment('3');
 		$this->db->where('id', $id);
 		$this -> db -> delete('add_customers');
@@ -155,22 +154,22 @@ public function update_customers($data){
 }
 
 
-public function add_operation_number($data){
-
-	$this->db->insert('add_operation_number', $data);
+public function add_operational_task($data){
+$this->db->insert('add_operation_number', $data);
 }
-public function get_list_operation_number(){
+
+public function get_list_operational_task(){
 			
 	$this->db->select('*');
 	return $this->db->get('add_operation_number')->result_array();
 }
-public function update_operation_number($data){
+public function update_operational_task($data){
 		
 	
 	$this->db->where('id', $data['id']);
 	$this->db->update('add_operation_number', $data);
 	}
-	public function delete_operation_number(){
+	public function list_operational_task(){
 		$id =$this->uri->segment('3');
 		$this->db->where('id', $id);
 		$this -> db -> delete('add_operation_number');
@@ -178,23 +177,23 @@ public function update_operation_number($data){
 }
 
 
-public function add_part_type($data){
+public function add_project_entry($data){
 
 	$this->db->insert('add_part_type', $data);
 }
-public function get_list_part_type(){
+public function get_list_project_entry(){
 			
 	$this->db->select('*');
 	return $this->db->get('add_part_type')->result_array();
 }
-public function update_part_type($data){
+public function update_project_entry($data){
 		
 	
 	$this->db->where('id', $data['id']);
 	$this->db->update('add_part_type', $data);
 	}
 
-	public function delete_part_type(){
+	public function delete_project_entry(){
 		$id =$this->uri->segment('3');
 		$this->db->where('id', $id);
 		$this -> db -> delete('add_part_type');
@@ -202,26 +201,48 @@ public function update_part_type($data){
 }
 
 
-public function add_email_masters($data){
+public function add_project_task($data){
 
 	$this->db->insert('add_email_masters', $data);
 }
-public function get_list_email_masters(){
+public function get_list_project_task(){
 			
 	$this->db->select('*');
 	return $this->db->get('add_email_masters')->result_array();
 }
-public function update_email_masters($data){
-		
-	
+public function update_project_task($data){
+
 	$this->db->where('id', $data['id']);
 	$this->db->update('add_email_masters', $data);
 	}
 
-	public function delete_email_masters(){
+	public function delete_project_task(){
 		$id =$this->uri->segment('3');
 		$this->db->where('id', $id);
 		$this -> db -> delete('add_email_masters');
+		
+}
+
+public function add_project_status($data){
+
+	$this->db->insert('add_project_status', $data);
+}
+
+public function get_list_project_status(){
+			
+	$this->db->select('*');
+	return $this->db->get('add_project_status')->result_array();
+}
+ 
+public function update_project_status($data){
+
+	$this->db->where('id', $data['id']);
+	$this->db->update('add_project_status', $data);
+	}
+	public function delete_project_status(){
+		$id =$this->uri->segment('3');
+		$this->db->where('id', $id);
+		$this -> db -> delete('add_project_status');
 		
 }
 

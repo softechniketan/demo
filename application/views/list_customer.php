@@ -14,19 +14,27 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('add_email_masters') ?>" method="POST"
+                                    <form action="<?php echo base_url('add_customer') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Email <span class="text-danger">*</span></label>
+                                            <label for="on click url">Customer Name <span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="email" name="name" placeholder="Enter Email "
+                                            <input required type="text" name="name" placeholder="Enter Part family "
                                                 class="form-control" value="" id="name">
                                             <input required type="hidden" name="table_name" value="design_index_master"
                                                 placeholder="Enter Part family " class="form-control" value="" id="">
 
 
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="on click url">location <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="location" placeholder="Enter Part family "
+                                                class="form-control" value="" id="location">
+                                            
                                         </div>
 
 
@@ -46,11 +54,11 @@
   <div class="card">
       <div class="card-header">
         <div class="d-inline-block  float-right">
-          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Email Masters</h3>
+          <h3 class="card-title"><i class="fa fa-list"></i>&nbsp;Customer List</h3>
         </div>
         <div class="card-header">
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addPromo"> <i class="fa fa-plus"></i>
-                                Add Email Masters
+                                Add Customer Name
                             </button>
                         </div>
 
@@ -69,12 +77,14 @@
           <thead>
             <tr>
               <th>sr.no</th>
-              <th>Email</th>
+              <th>Customer Name</th>
+              <th>Location</th>
+
              
               <th width="200" class="text-left">Action</th>
             </tr>
             <?php foreach ($records as $rec) {  
-        $name = $rec['email_id'];
+        $name = $rec['name'];
         $id = $rec['id'];
           ?>
 
@@ -96,20 +106,29 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?php echo base_url('edit_email_masters') ?>" method="POST"
+                                    <form action="<?php echo base_url('edit_customer') ?>" method="POST"
                                         enctype="multipart/form-data">
 
 
                                         <div class="form-group">
-                                            <label for="on click url">Email <span class="text-danger">*</span></label>
+                                            <label for="on click url">Name <span class="text-danger">*</span></label>
                                             <br>
-                                            <input required type="email" name="name" placeholder="Enter Part family "
+                                            <input required type="text" name="name" placeholder="Enter Part family "
                                                 class="form-control"  value="<?php  echo $name; ?>" id="name">
                                             <input required type="hidden" name="id" 
                                                 placeholder="Enter Part family " class="form-control" value="<?php  echo $id; ?>" id="id">
 
 
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="on click url">location <span class="text-danger">*</span></label>
+                                            <br>
+                                            <input required type="text" name="location" placeholder="Enter Part family "
+                                                class="form-control" value="<?php  echo $rec['location']; ?>" id="location">
+                                            
+                                        </div>
+
                                       
                                 </div>
 
@@ -124,8 +143,9 @@
           
             <tr>
              <th > <?php echo "{$rec['id']}"; ?>  </th>
-              <th><?php echo "{$rec['email_id']}"; ?></th>
-              
+              <th><?php echo "{$rec['name']}"; ?></th>
+              <th><?php echo "{$rec['location']}"; ?></th>
+
 
               <!-- <th width="200" class="text-right"><?php echo "{$rec['Name']}"; ?> </th> -->
               <th  width="200" class="text-left">
@@ -134,7 +154,7 @@
 
 
            
-            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_email_masters/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
+            <a title="Delete" class="delete btn btn-sm btn-danger" href="<?php echo base_url('')?>welcome/delete_customer/<?php echo  "{$rec['id']}"; ?>" title="Delete" onclick="return confirm(\'Do you want to delete ?\')"> <i class="fa fa-trash"></i></a></th>
             </tr>
 
             <?php  }

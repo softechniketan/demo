@@ -193,6 +193,7 @@
                                                         <input required type="text" name="part_number"
                                                             placeholder="Enter part_number" class="form-control"
                                                             value="<?php echo $rec['part_number'];  ?>" id="">
+                                                          
                                                             <input required type="hidden" name="id"
                                                             placeholder="Enter part_number" class="form-control"
                                                             value="<?php echo $rec['id'];  ?>" id="">
